@@ -1,0 +1,108 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    font-family: sans-serif;
+    background-color: #800080;
+    margin: 0;
+    height: 100vh;
+}
+
+.giftcontainer {
+    position: relative;
+    text-align: center;
+    transform: translateY(-50%); /* Centra verticalmente en relación al padre */
+}
+
+.gift {
+    position: relative; /* Cambia a relativo */
+    width: 150px;
+    height: 100px;
+    background-color: #e9c46a;
+    margin-top: 40px; /* Ajusta el margen superior */
+}
+
+.gift::before {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 100px;
+    background-color: #e76f51;
+    left: 62px;
+}
+
+.gift::after {
+    content: '';
+    position: absolute;
+    box-shadow: inset 0 10px rgba(0, 0, 0, 0.3);
+    width: 150px;
+    height: 100px;
+    top: 0;
+    left: 0;
+}
+
+#tocaqui {
+    display: none;
+    text-align: center;
+}
+
+.tocaqui {
+    position: absolute;
+    background-color: #e9c46a;
+    width: 170px;
+    height: 40px;
+    top: -40px;
+    left: -10px;
+    transform-origin: bottom left;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.tocaqui::before {
+    position: absolute;
+    content: '';
+    width: 25px;
+    height: 40px;
+    background-color: #e76f51;
+    left: 72px;
+}
+
+.tocaqui::after {
+    content: '';
+    position: absolute;
+    width: 5px;
+    height: 0;
+    border-bottom: 30px solid #e76f51;
+    border-top: 30px solid #e76f51;
+    border-left: 0px solid #e76f51;
+    border-right: 30px solid transparent;
+    transform: rotate(-90deg);
+    left: 65px;
+    top: -45px;
+}
+
+#tocaqui:checked+.tocaqui {
+    transform: rotate(-110deg) scale(0.85);
+}
+
+#tocaqui:checked~.deseos {
+    transform: translateY(-120px);
+}
+
+.deseos {
+    position: absolute;
+    transition: .5s;
+    color: #333;
+    font-size: 18px;
+    transform: uppercase;
+    text-align: center;
+    z-index: -1;
+    left: 10px;
+    color: #fff;
+    text-shadow: 0 0 10px #020202;
+}
+.corazon-rojo {
+    color: red;
+  }
+  
